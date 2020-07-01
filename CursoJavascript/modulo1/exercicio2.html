@@ -6,11 +6,18 @@
     <title>Curso Javascript - Exercício 2</title>
 </head>
 <body>
+    <h2>Curso de Javascript Rocketseat</h2>
+    <h3>Módulo 1</h3>
+    <h4>Exercício 2</h4>
     <script>
         var pares = function (x, y) {
-            var result = x % y
-
-            return result;
+            var i = x;
+            while (i >= x && i <= y) {
+                if ((i % 2) === 0) {
+                    console.log(i);
+                }
+                i++;
+            }
         }
 
         pares(32, 321);
