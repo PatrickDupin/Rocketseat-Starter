@@ -21,9 +21,12 @@
         ];
 
         function habilidades (usuarios) {
-            var retorno;
-            // Dica: Para percorrer um vetor você deve utilizar a sintaxe for...of e para unir valores de um array com um separador utilize o join.
-            // 'O ' + usuarios.nome + ' possui as habilidades: ' + usuarios.habilidades + '.\n'
+            var retorno = '';
+
+            for (const usuario of usuarios) {
+                    retorno += '\n' + 'O ' + usuario.nome + ' possui as habilidades: ' + usuario.habilidades.join(', ') + '.';
+            }
+
             return retorno;
         }
 
