@@ -6,12 +6,46 @@
     <title>Curso Javascript - Exercício 1</title>
 </head>
 <body>
-    <h2>Curso de Javascript Rocketseat</h2>
-    <h3>Módulo 2</h3>
-	<h4>Exercício 1</h4>
-	<input type="button" name="btn" value="Clique aqui" />
-    <script>
+    <div id="app">
+        <!-- <h2>Curso de Javascript Rocketseat</h2> -->
+        <!-- <h3>Módulo 2</h3> -->
+	    <!-- <h4>Exercício 1</h4> -->
+        <button id="btn">Criar elemento</button>
+        <div class="box"></div>
 
+    </div>
+
+    <script>
+        var boxElement = document.querySelector('.box');
+        var btnElement = document.querySelector('button#btn');
+        var rotate = 0;
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        
+        btnElement.onclick = function() {
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.margin = '15px';
+            boxElement.style.backgroundColor = '#f00';
+        };
+
+        boxElement.onmouseover = function () {
+            boxElement.style.cursor = 'pointer';
+            var newColor = getRandomColor(); // #E943F0
+            boxElement.style.backgroundColor = newColor;
+
+            rotate = rotate + 5;
+            console.log(rotate);
+            boxElement.style.transform = 'rotate(' + rotate + 'deg)';
+        }
 
     </script>
 </body>
